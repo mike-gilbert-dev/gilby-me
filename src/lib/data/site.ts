@@ -137,31 +137,12 @@ export type Lab = {
 	canvas?: boolean;
 };
 
-export const labs: Lab[] = [
-	{
-		num: '001',
-		title: 'College Soccer Scraper',
-		description:
-			"A data pipeline scraping NCAA D1 soccer stats into Supabase — the engine that feeds CollegeSoccer.io's rankings and records.",
-		tags: ['Data', 'Scraper', 'Supabase'],
-		cursor: 'Open'
-	},
-	{
-		num: '002',
-		title: 'Shadow Ward',
-		description:
-			'A 2D isometric cyberpunk strategy game about contested territory and influence — in active design.',
-		tags: ['Game Design', 'Worldbuilding'],
-		cursor: 'Open'
-	},
-	{
-		num: '003',
-		title: 'Field Grid',
-		description: 'A live canvas sketch — move your cursor through the grid.',
-		cursor: 'Drag',
-		canvas: true
-	}
-];
+/**
+ * Empty on purpose — nothing is ready to show yet, so the Labs section
+ * renders its empty-state note instead. Add an entry here and the card
+ * grid comes back on its own; no component changes needed.
+ */
+export const labs: Lab[] = [];
 
 export const skills = [
 	{
