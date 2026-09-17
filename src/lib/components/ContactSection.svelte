@@ -15,15 +15,15 @@
 			Let's Build<br /><span class="accent-word">Something.</span>
 		</h2>
 
-		<div class="contact-row reveal" use:reveal>
-			<a class="contact-email" href="mailto:{site.email}">{site.email} ↗</a>
-		</div>
+		<!-- TODO: contact form goes here. There is deliberately no email
+		     address on the site in the meantime — reach-outs go via the
+		     social links below. -->
 
 		<footer class="site-foot">
 			<div class="foot-brand"><span class="rule"></span> {site.wordmark}</div>
 			<div class="socials">
 				{#each socials as social (social.id)}
-					<!-- eslint-disable svelte/no-navigation-without-resolve -- external profile URLs and mailto: only -->
+					<!-- eslint-disable svelte/no-navigation-without-resolve -- external profile URLs only -->
 					<a
 						href={social.href}
 						aria-label={social.label}
@@ -56,32 +56,6 @@
 		letter-spacing: -0.02em;
 	}
 	.contact-title .accent-word {
-		color: var(--color-accent);
-	}
-
-	.contact-row {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		gap: 24px;
-		flex-wrap: wrap;
-		margin-top: 36px;
-	}
-
-	.contact-email {
-		font-family: var(--font-mono);
-		font-size: 1rem;
-		border-bottom: 1px solid rgba(243, 238, 226, 0.4);
-		padding-bottom: 4px;
-		display: inline-flex;
-		gap: 10px;
-		align-items: center;
-		transition:
-			border-color 0.25s ease,
-			color 0.25s ease;
-	}
-	.contact-email:hover {
-		border-color: var(--color-accent);
 		color: var(--color-accent);
 	}
 

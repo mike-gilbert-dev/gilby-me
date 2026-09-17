@@ -16,7 +16,6 @@ import csioLogo from '$lib/assets/images/csio_logo.svg';
 export const site = {
 	name: 'Mike Gilbert',
 	wordmark: 'GILBY.ME',
-	email: 'mikegilbert@insidelacrosse.com',
 	location: 'BALTIMORE, MD',
 	description:
 		'Mike Gilbert — designer, developer, and builder in Baltimore. Visual identity, digital products, and web experiments.'
@@ -171,6 +170,7 @@ export const skills = [
 export const socials = [
 	{ id: 'github', label: 'GitHub', href: 'https://github.com/mike-gilbert-dev' },
 	{ id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/mike-gilbert-54399423/' },
-	{ id: 'instagram', label: 'Instagram', href: '#' },
-	{ id: 'email', label: 'Email', href: `mailto:${site.email}` }
+	{ id: 'instagram', label: 'Instagram', href: '#' }
 ] as const;
+
+export type SocialId = (typeof socials)[number]['id'];
