@@ -45,7 +45,8 @@ export type CaseStudy = {
 	title: [string, string];
 	description: string;
 	stats: { value: string; label: string }[];
-	features: { label: string; pill: string }[];
+	/** Optional: cards without a feature panel carry the detail in prose. */
+	features?: { label: string; pill: string }[];
 	href: string;
 	linkLabel: string;
 	theme: 'il' | 'csio';
@@ -59,15 +60,10 @@ export const caseStudies: CaseStudy[] = [
 		eyebrow: 'insidelacrosse.com — national sport-media platform',
 		title: ['Inside', 'Lacrosse'],
 		description:
-			'The source for everything lacrosse — news, recruiting, rankings, and community, built and run in production for a national sport-media audience.',
+			'The source for everything lacrosse — news, recruiting, rankings, and community, built and run in production for a national sport-media audience. A full rebuild moved the platform off a legacy stack and onto SvelteKit with a PostgreSQL backend, with the frontend and CMS layer owned end-to-end from there — REST APIs, AWS infrastructure, analytics, ad delivery, and subscription billing, on a technical roadmap directed for over a decade.',
 		stats: [
 			{ value: '5M+', label: 'Active Users' },
 			{ value: '99M+', label: 'Pageviews' }
-		],
-		features: [
-			{ label: 'News & Recruiting', pill: 'Daily' },
-			{ label: 'Team & Player Rankings', pill: 'Weekly' },
-			{ label: 'Community & Forums', pill: 'Ongoing' }
 		],
 		href: 'https://www.insidelacrosse.com',
 		linkLabel: 'Visit InsideLacrosse.com',

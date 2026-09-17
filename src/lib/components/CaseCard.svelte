@@ -25,7 +25,7 @@
 	<div>
 		<span class="case-eyebrow">{study.eyebrow}</span>
 		<h3 class="case-title">{study.title[0]}<br />{study.title[1]}</h3>
-		<p class="case-sub">{study.description}</p>
+		<p class="case-sub" class:wide={!study.features}>{study.description}</p>
 
 		<div class="stat-row">
 			{#each study.stats as stat (stat.label)}
@@ -36,14 +36,16 @@
 			{/each}
 		</div>
 
-		<div class="feature-panel">
-			{#each study.features as feature (feature.label)}
-				<div class="row">
-					<span>{feature.label}</span>
-					<span class="pill">{feature.pill}</span>
-				</div>
-			{/each}
-		</div>
+		{#if study.features}
+			<div class="feature-panel">
+				{#each study.features as feature (feature.label)}
+					<div class="row">
+						<span>{feature.label}</span>
+						<span class="pill">{feature.pill}</span>
+					</div>
+				{/each}
+			</div>
+		{/if}
 
 		<!-- Always an absolute external URL, never an internal route. -->
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
@@ -145,6 +147,10 @@
 		max-width: 44ch;
 		margin-top: 14px;
 		text-wrap: balance;
+	}
+	.case-sub.wide {
+		max-width: 58ch;
+		text-wrap: pretty;
 	}
 
 	.stat-row {
