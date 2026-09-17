@@ -1,0 +1,131 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   Design tokens — from the gilby.me handoff package.
+   Exposed through @theme so Tailwind generates matching
+   utilities (bg-canvas, text-ink, border-line, font-display …)
+   while scoped component CSS can read them as CSS variables.
+   ============================================================ */
+@theme {
+	--color-canvas: #f1ece0;
+	--color-paper: #faf7ef;
+	--color-ink: #17150f;
+	--color-ink-70: rgba(23, 21, 15, 0.7);
+	--color-ink-45: rgba(23, 21, 15, 0.45);
+	--color-line: #dad2be;
+	--color-line-strong: #c7bc9f;
+	--color-accent: #de4222;
+	--color-accent-ink: #faf3ec;
+	--color-accent-soft: #f3d3c2;
+	--color-dark-canvas: #151310;
+	--color-dark-paper: #1d1a15;
+	--color-dark-ink: #f3eee2;
+	--color-dark-line: rgba(243, 238, 226, 0.14);
+
+	--font-display: 'Jost', 'Arial', sans-serif;
+	--font-sans: 'Work Sans', -apple-system, 'Segoe UI', sans-serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+	/* The prototype's two shared easing curves. */
+	--ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+	--ease-out-pop: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@layer base {
+	:root {
+		color-scheme: light;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+
+	body {
+		background: var(--color-canvas);
+		color: var(--color-ink);
+		font-family: var(--font-sans);
+		font-size: 16px;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+		overflow-x: hidden;
+		position: relative;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	img {
+		max-width: 100%;
+		display: block;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	p {
+		margin: 0;
+	}
+	button {
+		font: inherit;
+		color: inherit;
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+
+	::selection {
+		background: var(--color-accent);
+		color: var(--color-accent-ink);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 3px;
+	}
+}
+
+@layer components {
+	/* Shared page gutter. */
+	.wrap {
+		max-width: 1320px;
+		margin-inline: auto;
+		padding-inline: clamp(20px, 4vw, 56px);
+	}
+
+	.section-pad {
+		padding-block: clamp(70px, 10vw, 130px);
+	}
+
+	/* Scroll reveal. The `in` class is applied by use:reveal.
+	   Declared globally because Svelte actions live outside any
+	   component's style scope. */
+	.reveal {
+		opacity: 0;
+		transform: translateY(26px);
+		transition:
+			opacity 0.8s var(--ease-out-soft),
+			transform 0.8s var(--ease-out-soft);
+	}
+	.reveal.in {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.reveal {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
+}

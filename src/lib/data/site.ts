@@ -1,0 +1,176 @@
+import mayday from '$lib/assets/images/mayday_lg_01.jpg';
+import eagleStout from '$lib/assets/images/eagle_stout_lg_01.jpg';
+import nova from '$lib/assets/images/nova_lg_01.jpg';
+import darkville from '$lib/assets/images/darkville_lg_02.jpg';
+import gameday from '$lib/assets/images/gameday_lg_01.jpg';
+import chesapeake from '$lib/assets/images/chesapeake_lg_01.jpg';
+import marconi from '$lib/assets/images/marconi_lg_01.jpg';
+import soul from '$lib/assets/images/soul_logo_lg_01.jpg';
+import murphys from '$lib/assets/images/murphys_lg_01.jpg';
+import columbus from '$lib/assets/images/columbus_lg_01.jpg';
+import horizon from '$lib/assets/images/horizon_lg_01.jpg';
+import gorilla from '$lib/assets/images/gorilla_lg_01.jpg';
+import xando from '$lib/assets/images/xando_lg_01.jpg';
+import csioLogo from '$lib/assets/images/csio_logo.svg';
+
+export const site = {
+	name: 'Mike Gilbert',
+	wordmark: 'GILBY.ME',
+	email: 'mikegilbert@insidelacrosse.com',
+	location: 'BALTIMORE, MD',
+	description:
+		'Mike Gilbert — designer, developer, and builder in Baltimore. Visual identity, digital products, and web experiments.'
+};
+
+/** Design folds into Work — it is deliberately not a nav item. */
+export const navLinks = [
+	{ id: 'work', label: 'Work' },
+	{ id: 'labs', label: 'Labs' },
+	{ id: 'about', label: 'About' },
+	{ id: 'contact', label: 'Contact' }
+] as const;
+
+export type NavId = (typeof navLinks)[number]['id'];
+
+export type CaseStudy = {
+	index: string;
+	eyebrow: string;
+	/** Rendered as two lines in the card title. */
+	title: [string, string];
+	description: string;
+	stats: { value: string; label: string }[];
+	features: { label: string; pill: string }[];
+	href: string;
+	linkLabel: string;
+	theme: 'il' | 'csio';
+	logo?: string;
+	monogram?: string;
+};
+
+export const caseStudies: CaseStudy[] = [
+	{
+		index: '01 / development',
+		eyebrow: 'insidelacrosse.com — national sport-media platform',
+		title: ['Inside', 'Lacrosse'],
+		description:
+			'The source for everything lacrosse — news, recruiting, rankings, and community, built and run in production for a national sport-media audience.',
+		stats: [
+			{ value: 'News', label: '& Recruiting' },
+			{ value: 'Rankings', label: 'Teams & Players' },
+			{ value: 'Community', label: 'Forums & Discussion' }
+		],
+		features: [
+			{ label: 'News & Recruiting', pill: 'Daily' },
+			{ label: 'Team & Player Rankings', pill: 'Weekly' },
+			{ label: 'Community & Forums', pill: 'Ongoing' }
+		],
+		href: 'https://www.insidelacrosse.com',
+		linkLabel: 'Visit InsideLacrosse.com',
+		theme: 'il',
+		monogram: 'IL'
+	},
+	{
+		index: '02 / development',
+		eyebrow: 'collegesoccer.io — independent product',
+		title: ['College', 'Soccer.io'],
+		description:
+			'All of NCAA D1 soccer in one place — conceived, designed, and engineered solo, from data pipeline to rankings to the interface fans use every week.',
+		// Rounded static copy by design — bump by hand as the numbers grow.
+		stats: [
+			{ value: '600+', label: 'Teams Tracked' },
+			{ value: '20K+', label: 'Games Logged' },
+			{ value: '40K+', label: 'Player Records' }
+		],
+		features: [
+			{ label: "Women's Game of the Week", pill: 'Live' },
+			{ label: "Men's + Women's Rankings", pill: 'Weekly' },
+			{ label: 'Data Pipeline → Supabase', pill: 'Automated' }
+		],
+		href: 'https://collegesoccer.io',
+		linkLabel: 'Visit CollegeSoccer.io',
+		theme: 'csio',
+		logo: csioLogo
+	}
+];
+
+export type GalleryPiece = {
+	src: string;
+	name: string;
+	category: string;
+	alt: string;
+};
+
+export const galleryPieces: GalleryPiece[] = [
+	{ src: mayday, name: 'Mayday', category: 'Brand Identity — Print', alt: 'Mayday brand identity' },
+	{
+		src: eagleStout,
+		name: 'Eagle Stout',
+		category: 'Packaging — Print',
+		alt: 'Eagle Stout packaging design'
+	},
+	{ src: nova, name: 'Nova', category: 'Logo Mark', alt: 'Nova logo mark' },
+	{ src: darkville, name: 'Darkville', category: 'Print', alt: 'Darkville print design' },
+	{ src: gameday, name: 'Gameday', category: 'Logo Mark', alt: 'Gameday logo mark' },
+	{ src: chesapeake, name: 'Chesapeake', category: 'Logo Mark', alt: 'Chesapeake logo mark' },
+	{ src: marconi, name: 'Marconi', category: 'Logo Mark', alt: 'Marconi logo mark' },
+	{ src: soul, name: 'Soul', category: 'Logo Mark', alt: 'Soul logo mark' },
+	{ src: murphys, name: "Murphy's", category: 'Print', alt: "Murphy's print design" },
+	{ src: columbus, name: 'Columbus', category: 'Print', alt: 'Columbus print design' },
+	{ src: horizon, name: 'Horizon', category: 'Print', alt: 'Horizon print design' },
+	{ src: gorilla, name: 'Gorilla', category: 'Logo Mark', alt: 'Gorilla logo mark' },
+	{ src: xando, name: 'Xando', category: 'Print', alt: 'Xando print design' }
+];
+
+export type Lab = {
+	num: string;
+	title: string;
+	description: string;
+	tags?: string[];
+	cursor: string;
+	/** LAB/003 renders the live canvas instead of a tag row. */
+	canvas?: boolean;
+};
+
+export const labs: Lab[] = [
+	{
+		num: '001',
+		title: 'College Soccer Scraper',
+		description:
+			"A data pipeline scraping NCAA D1 soccer stats into Supabase — the engine that feeds CollegeSoccer.io's rankings and records.",
+		tags: ['Data', 'Scraper', 'Supabase'],
+		cursor: 'Open'
+	},
+	{
+		num: '002',
+		title: 'Shadow Ward',
+		description:
+			'A 2D isometric cyberpunk strategy game about contested territory and influence — in active design.',
+		tags: ['Game Design', 'Worldbuilding'],
+		cursor: 'Open'
+	},
+	{
+		num: '003',
+		title: 'Field Grid',
+		description: 'A live canvas sketch — move your cursor through the grid.',
+		cursor: 'Drag',
+		canvas: true
+	}
+];
+
+export const skills = [
+	{
+		label: 'Design',
+		items: ['Visual Identity', 'Branding', 'Editorial Layout', 'Print Design', 'Logo Design']
+	},
+	{
+		label: 'Develop',
+		items: ['SvelteKit', 'Tailwind CSS', 'Supabase', 'Full-Stack Products', 'Data Pipelines']
+	}
+];
+
+export const socials = [
+	{ id: 'github', label: 'GitHub', href: 'https://github.com/mike-gilbert-dev' },
+	{ id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/mike-gilbert-54399423/' },
+	{ id: 'instagram', label: 'Instagram', href: '#' },
+	{ id: 'email', label: 'Email', href: `mailto:${site.email}` }
+] as const;
