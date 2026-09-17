@@ -57,6 +57,20 @@ Read [docs/HANDOFF.md](docs/HANDOFF.md) before changing anything visual. Short v
 - A list of things explicitly decided against lives at the bottom of the handoff. Ask before
   re-adding any of them.
 
+## Gallery images
+
+Two sets live in [src/lib/assets/images/](src/lib/assets/images/):
+
+- the files in that folder are the **grid thumbnails** (mostly 380px squares)
+- `large/` holds the **lightbox versions**, pulled from the previous gilby.me
+  `/img/portfolio` directory — mostly 600px, with the two print pieces resized from
+  ~2300-2500px originals down to 1400px
+
+`GalleryPiece.large` is optional and the lightbox falls back to `src`, so a piece can be
+added with only a thumbnail. Clicking a tile opens the lightbox; it pages with the arrow
+keys, closes on Escape or backdrop click, and never scales an image past its own
+resolution.
+
 ## Resume
 
 The PDF lives at [static/Mike_Gilbert_Resume.pdf](static/Mike_Gilbert_Resume.pdf) and is served from

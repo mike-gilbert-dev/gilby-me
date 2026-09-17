@@ -1,17 +1,19 @@
 <script lang="ts">
 	import type { GalleryPiece } from '$lib/data/site';
 
-	let { piece }: { piece: GalleryPiece } = $props();
+	type Props = { piece: GalleryPiece; onOpen: () => void };
+	let { piece, onOpen }: Props = $props();
 </script>
 
-<!-- Full colour, uniform square — no desaturation, no masonry. -->
-<div class="gallery-item" data-cursor="View">
+<!-- A button rather than a div so the gallery is keyboard-operable.
+     Full colour, uniform square — no desaturation, no masonry. -->
+<button class="gallery-item" data-cursor="View" onclick={onOpen}>
 	<img src={piece.src} alt={piece.alt} loading="lazy" decoding="async" />
-	<div class="info">
+	<span class="info">
 		<span class="name">{piece.name}</span>
 		<span class="cat">{piece.category}</span>
-	</div>
-</div>
+	</span>
+</button>
 
 <style>
 	.gallery-item {
@@ -22,6 +24,10 @@
 		border: 1px solid var(--color-line);
 		cursor: pointer;
 		aspect-ratio: 1;
+		padding: 0;
+		display: block;
+		width: 100%;
+		text-align: left;
 	}
 
 	.gallery-item img {
@@ -30,7 +36,8 @@
 		object-fit: cover;
 		transition: transform 0.7s var(--ease-out-soft);
 	}
-	.gallery-item:hover img {
+	.gallery-item:hover img,
+	.gallery-item:focus-visible img {
 		transform: scale(1.06);
 	}
 
@@ -45,11 +52,13 @@
 		transform: translateY(100%);
 		transition: transform 0.4s var(--ease-out-soft);
 	}
-	.gallery-item:hover .info {
+	.gallery-item:hover .info,
+	.gallery-item:focus-visible .info {
 		transform: translateY(0);
 	}
 
 	.info .name {
+		display: block;
 		font-family: var(--font-display);
 		font-weight: 700;
 		text-transform: uppercase;

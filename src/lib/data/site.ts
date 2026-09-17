@@ -13,6 +13,23 @@ import gorilla from '$lib/assets/images/gorilla_lg_01.jpg';
 import xando from '$lib/assets/images/xando_lg_01.jpg';
 import csioLogo from '$lib/assets/images/csio_logo.svg';
 
+// Higher-resolution variants, shown in the lightbox only. Pulled from the
+// previous gilby.me /img/portfolio directory; the two print pieces were
+// 2300-2500px originals, resized to 1400px to keep them web-weight.
+import maydayLg from '$lib/assets/images/large/mayday_lg_01.jpg';
+import eagleStoutLg from '$lib/assets/images/large/eagle_stout_lg_01.jpg';
+import novaLg from '$lib/assets/images/large/nova_lg_01.jpg';
+import darkvilleLg from '$lib/assets/images/large/darkville_lg_02.jpg';
+import gamedayLg from '$lib/assets/images/large/gameday_lg_01.jpg';
+import chesapeakeLg from '$lib/assets/images/large/chesapeake_lg_01.jpg';
+import marconiLg from '$lib/assets/images/large/marconi_lg_01.jpg';
+import soulLg from '$lib/assets/images/large/soul_logo_lg_01.jpg';
+import murphysLg from '$lib/assets/images/large/murphys_lg_01.jpg';
+import columbusLg from '$lib/assets/images/large/columbus_lg_01.jpg';
+import horizonLg from '$lib/assets/images/large/horizon_lg_01.jpg';
+import gorillaLg from '$lib/assets/images/large/gorilla_lg_01.jpg';
+import xandoLg from '$lib/assets/images/large/xando_lg_01.jpg';
+
 export const site = {
 	name: 'Mike Gilbert',
 	wordmark: 'GILBY.ME',
@@ -95,31 +112,107 @@ export const caseStudies: CaseStudy[] = [
 ];
 
 export type GalleryPiece = {
+	/** Grid thumbnail. */
 	src: string;
+	/** Higher-resolution version for the lightbox; falls back to src. */
+	large?: string;
 	name: string;
 	category: string;
 	alt: string;
 };
 
 export const galleryPieces: GalleryPiece[] = [
-	{ src: mayday, name: 'Mayday', category: 'Brand Identity — Print', alt: 'Mayday brand identity' },
+	{
+		src: mayday,
+		large: maydayLg,
+		name: 'Mayday',
+		category: 'Brand Identity — Print',
+		alt: 'Mayday brand identity'
+	},
 	{
 		src: eagleStout,
+		large: eagleStoutLg,
 		name: 'Eagle Stout',
 		category: 'Packaging — Print',
 		alt: 'Eagle Stout packaging design'
 	},
-	{ src: nova, name: 'Nova', category: 'Logo Mark', alt: 'Nova logo mark' },
-	{ src: darkville, name: 'Darkville', category: 'Print', alt: 'Darkville print design' },
-	{ src: gameday, name: 'Gameday', category: 'Logo Mark', alt: 'Gameday logo mark' },
-	{ src: chesapeake, name: 'Chesapeake', category: 'Logo Mark', alt: 'Chesapeake logo mark' },
-	{ src: marconi, name: 'Marconi', category: 'Logo Mark', alt: 'Marconi logo mark' },
-	{ src: soul, name: 'Soul', category: 'Logo Mark', alt: 'Soul logo mark' },
-	{ src: murphys, name: "Murphy's", category: 'Print', alt: "Murphy's print design" },
-	{ src: columbus, name: 'Columbus', category: 'Print', alt: 'Columbus print design' },
-	{ src: horizon, name: 'Horizon', category: 'Print', alt: 'Horizon print design' },
-	{ src: gorilla, name: 'Gorilla', category: 'Logo Mark', alt: 'Gorilla logo mark' },
-	{ src: xando, name: 'Xando', category: 'Print', alt: 'Xando print design' }
+	{
+		src: nova,
+		large: novaLg,
+		name: 'Nova',
+		category: 'Logo Mark',
+		alt: 'Nova logo mark'
+	},
+	{
+		src: darkville,
+		large: darkvilleLg,
+		name: 'Darkville',
+		category: 'Print',
+		alt: 'Darkville print design'
+	},
+	{
+		src: gameday,
+		large: gamedayLg,
+		name: 'Gameday',
+		category: 'Logo Mark',
+		alt: 'Gameday logo mark'
+	},
+	{
+		src: chesapeake,
+		large: chesapeakeLg,
+		name: 'Chesapeake',
+		category: 'Logo Mark',
+		alt: 'Chesapeake logo mark'
+	},
+	{
+		src: marconi,
+		large: marconiLg,
+		name: 'Marconi',
+		category: 'Logo Mark',
+		alt: 'Marconi logo mark'
+	},
+	{
+		src: soul,
+		large: soulLg,
+		name: 'Soul',
+		category: 'Logo Mark',
+		alt: 'Soul logo mark'
+	},
+	{
+		src: murphys,
+		large: murphysLg,
+		name: "Murphy's",
+		category: 'Print',
+		alt: "Murphy's print design"
+	},
+	{
+		src: columbus,
+		large: columbusLg,
+		name: 'Columbus',
+		category: 'Print',
+		alt: 'Columbus print design'
+	},
+	{
+		src: horizon,
+		large: horizonLg,
+		name: 'Horizon',
+		category: 'Print',
+		alt: 'Horizon print design'
+	},
+	{
+		src: gorilla,
+		large: gorillaLg,
+		name: 'Gorilla',
+		category: 'Logo Mark',
+		alt: 'Gorilla logo mark'
+	},
+	{
+		src: xando,
+		large: xandoLg,
+		name: 'Xando',
+		category: 'Print',
+		alt: 'Xando print design'
+	}
 ];
 
 export type Lab = {
