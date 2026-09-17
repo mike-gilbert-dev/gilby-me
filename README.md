@@ -57,6 +57,15 @@ Read [docs/HANDOFF.md](docs/HANDOFF.md) before changing anything visual. Short v
 - A list of things explicitly decided against lives at the bottom of the handoff. Ask before
   re-adding any of them.
 
+## Resume
+
+The PDF lives at [static/Mike_Gilbert_Resume.pdf](static/Mike_Gilbert_Resume.pdf) and is served from
+the site root. It is reachable from the nav and from a CTA in the About section; both open it in a
+new tab, where the browser's PDF viewer handles downloading.
+
+To update it, drop a new PDF in at the same path — no code change needed. Note the hosted PDF
+carries a phone number and personal email, so it is publicly scrapeable by design.
+
 ## Content edits
 
 Copy, stats, gallery pieces, and links are all in [src/lib/data/site.ts](src/lib/data/site.ts) —

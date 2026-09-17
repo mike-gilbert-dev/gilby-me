@@ -96,6 +96,34 @@
 }
 
 @layer components {
+	/* Primary button. Shared by the hero CTA and the About resume link. */
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		padding: 0.95em 1.5em;
+		background: var(--color-ink);
+		color: var(--color-canvas);
+		border-radius: 2px;
+		width: fit-content;
+		transition:
+			transform 0.3s var(--ease-out-pop),
+			background 0.3s ease;
+	}
+	.btn:hover {
+		transform: translateY(-3px);
+		background: var(--color-accent);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.btn {
+			transition: none;
+		}
+	}
+
 	/* Shared page gutter. */
 	.wrap {
 		max-width: 1320px;

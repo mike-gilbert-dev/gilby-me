@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { reveal } from '$lib/actions/reveal';
-	import { site, skills } from '$lib/data/site';
+	import { asset } from '$app/paths';
+	import { site, skills, resume } from '$lib/data/site';
 	import SectionHead from './SectionHead.svelte';
 </script>
 
@@ -26,6 +27,10 @@
 					engineering — and keeps a running list of smaller experiments in Labs, because building
 					things he's curious about is half the point.
 				</p>
+
+				<a class="btn resume-cta" href={asset(resume.file)} target="_blank" rel="noopener">
+					View Resume ↗
+				</a>
 			</div>
 
 			<div class="reveal" use:reveal>
@@ -81,6 +86,10 @@
 	}
 	.about-copy + .about-copy {
 		margin-top: 14px;
+	}
+
+	.resume-cta {
+		margin-top: 30px;
 	}
 
 	.skills-table {

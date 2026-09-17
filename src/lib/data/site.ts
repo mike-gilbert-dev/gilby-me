@@ -31,6 +31,13 @@ export const navLinks = [
 
 export type NavId = (typeof navLinks)[number]['id'];
 
+/** Served from static/, so it sits at the site root. Opens in a new tab;
+    the browser PDF viewer handles downloading from there. */
+export const resume = {
+	file: '/Mike_Gilbert_Resume.pdf',
+	label: 'Resume'
+};
+
 export type CaseStudy = {
 	index: string;
 	eyebrow: string;

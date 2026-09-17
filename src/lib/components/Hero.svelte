@@ -105,27 +105,6 @@
 		flex-wrap: wrap;
 	}
 
-	.btn {
-		display: inline-flex;
-		align-items: center;
-		gap: 10px;
-		font-family: var(--font-mono);
-		font-size: 0.78rem;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		padding: 0.95em 1.5em;
-		background: var(--color-ink);
-		color: var(--color-canvas);
-		border-radius: 2px;
-		transition:
-			transform 0.3s var(--ease-out-pop),
-			background 0.3s ease;
-	}
-	.btn:hover {
-		transform: translateY(-3px);
-		background: var(--color-accent);
-	}
-
 	.btn-ghost {
 		font-family: var(--font-mono);
 		font-size: 0.76rem;
@@ -153,9 +132,6 @@
 	@media (prefers-reduced-motion: reduce) {
 		.btn-ghost .chev {
 			animation: none;
-		}
-		.btn {
-			transition: none;
 		}
 	}
 

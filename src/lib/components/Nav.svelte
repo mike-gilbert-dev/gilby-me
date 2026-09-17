@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { navLinks, type NavId } from '$lib/data/site';
+	import { asset } from '$app/paths';
+	import { navLinks, resume, type NavId } from '$lib/data/site';
 
 	let scrolled = $state(false);
 	let menuOpen = $state(false);
@@ -71,6 +72,9 @@
 					aria-current={active === link.id ? 'true' : undefined}>{link.label}</a
 				>
 			{/each}
+			<a class="resume-link" href={asset(resume.file)} target="_blank" rel="noopener">
+				{resume.label} <span aria-hidden="true">↗</span>
+			</a>
 		</nav>
 
 		<div class="nav-right">
@@ -91,6 +95,9 @@
 	{#each navLinks as link (link.id)}
 		<a href="#{link.id}" onclick={() => (menuOpen = false)}>{link.label}</a>
 	{/each}
+	<a href={asset(resume.file)} target="_blank" rel="noopener" onclick={() => (menuOpen = false)}
+		>{resume.label} ↗</a
+	>
 </div>
 
 <style>
@@ -174,6 +181,14 @@
 	}
 	.primary-links a.active {
 		color: var(--color-ink);
+	}
+
+	.primary-links a.resume-link {
+		color: var(--color-ink);
+	}
+	.primary-links a.resume-link span {
+		font-size: 0.9em;
+		opacity: 0.55;
 	}
 
 	.nav-right {
