@@ -10,4 +10,5 @@ bun.lockb
 
 # Handoff/reference material
 /Claude outputs/
-/docs/prototype-reference.html
+# Verbatim design reference — keep as delivered, prettier mangles the CSS block
+/docs/

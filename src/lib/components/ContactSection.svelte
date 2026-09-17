@@ -23,6 +23,7 @@
 			<div class="foot-brand"><span class="rule"></span> {site.wordmark}</div>
 			<div class="socials">
 				{#each socials as social (social.id)}
+					<!-- eslint-disable svelte/no-navigation-without-resolve -- external profile URLs and mailto: only -->
 					<a
 						href={social.href}
 						aria-label={social.label}
@@ -31,6 +32,7 @@
 					>
 						<SocialIcon id={social.id} />
 					</a>
+					<!-- eslint-enable svelte/no-navigation-without-resolve -->
 				{/each}
 			</div>
 		</footer>

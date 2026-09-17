@@ -52,7 +52,7 @@ Read [docs/HANDOFF.md](docs/HANDOFF.md) before changing anything visual. Short v
 - Section backgrounds stay **plain and static**. No parallax backgrounds, no dot/line/cross grids.
 - Design gallery images are always **full colour** in a **uniform square grid** — no desaturation,
   no masonry, no staggered offsets.
-- Labs card 003 (Field Grid) is the *only* continuous animation loop on the site. It pauses
+- Labs card 003 (Field Grid) is the _only_ continuous animation loop on the site. It pauses
   off-screen and renders a single static frame under reduced-motion.
 - A list of things explicitly decided against lives at the bottom of the handoff. Ask before
   re-adding any of them.

@@ -45,6 +45,8 @@
 			{/each}
 		</div>
 
+		<!-- Always an absolute external URL, never an internal route. -->
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 		<a href={study.href} target="_blank" rel="noopener" class="case-link">{study.linkLabel} ↗</a>
 	</div>
 </article>
