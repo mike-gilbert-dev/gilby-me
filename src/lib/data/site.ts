@@ -61,9 +61,8 @@ export const caseStudies: CaseStudy[] = [
 		description:
 			'The source for everything lacrosse — news, recruiting, rankings, and community, built and run in production for a national sport-media audience.',
 		stats: [
-			{ value: 'News', label: '& Recruiting' },
-			{ value: 'Rankings', label: 'Teams & Players' },
-			{ value: 'Community', label: 'Forums & Discussion' }
+			{ value: '5M+', label: 'Active Users' },
+			{ value: '99M+', label: 'Pageviews' }
 		],
 		features: [
 			{ label: 'News & Recruiting', pill: 'Daily' },
