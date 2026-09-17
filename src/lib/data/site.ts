@@ -244,9 +244,7 @@ export const skills = [
 ];
 
 export const socials = [
-	{ id: 'github', label: 'GitHub', href: 'https://github.com/mike-gilbert-dev' },
-	{ id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/mike-gilbert-54399423/' },
-	{ id: 'instagram', label: 'Instagram', href: '#' }
+	{ id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/mike-gilbert-54399423/' }
 ] as const;
 
 export type SocialId = (typeof socials)[number]['id'];
