@@ -92,17 +92,12 @@ export const caseStudies: CaseStudy[] = [
 		eyebrow: 'collegesoccer.io — independent product',
 		title: ['College', 'Soccer.io'],
 		description:
-			'All of NCAA D1 soccer in one place — conceived, designed, and engineered solo, from data pipeline to rankings to the interface fans use every week.',
+			'All of NCAA D1 soccer in one place — conceived, designed, and engineered solo, from data pipeline to rankings to the interface fans use every week. An automated pipeline keeps match results, rosters, and season records flowing into Supabase, which feeds weekly rankings for both the men’s and women’s games and a live Women’s Game of the Week through the season.',
 		// Rounded static copy by design — bump by hand as the numbers grow.
 		stats: [
 			{ value: '600+', label: 'Teams Tracked' },
 			{ value: '20K+', label: 'Games Logged' },
 			{ value: '40K+', label: 'Player Records' }
-		],
-		features: [
-			{ label: "Women's Game of the Week", pill: 'Live' },
-			{ label: "Men's + Women's Rankings", pill: 'Weekly' },
-			{ label: 'Data Pipeline → Supabase', pill: 'Automated' }
 		],
 		href: 'https://collegesoccer.io',
 		linkLabel: 'Visit CollegeSoccer.io',
